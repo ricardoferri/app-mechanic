@@ -58,6 +58,10 @@ return [
 
     'asset_url' => env('ASSET_URL'),
 
+
+    'DB' => Illuminate\Support\Facades\DB::class,
+
+    
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
