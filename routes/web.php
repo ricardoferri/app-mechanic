@@ -22,3 +22,5 @@ Route::get('painel', function () {
     return view('painel');
 });
 
+
+

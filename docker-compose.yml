@@ -32,6 +32,7 @@ services:
         image: mysql:5.7.22
         restart: unless-stopped
         environment:
+
             MYSQL_DATABASE: ${DB_DATABASE}
             MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
             MYSQL_PASSWORD: ${DB_PASSWORD}
@@ -40,19 +41,6 @@ services:
             - ./.docker/mysql/dbdata:/var/lib/mysql
         ports:
             - "3306:3306"
-        networks:
-            - laravel
-
-    # queue
-    queue:
-        image: especializati/laravel9-app
-        restart: unless-stopped
-        command: "php artisan queue:work"
-        volumes:
-            - ./:/var/www
-        depends_on:
-            - redis
-            - app
         networks:
             - laravel
 
